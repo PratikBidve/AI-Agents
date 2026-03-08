@@ -76,6 +76,12 @@ There you can use the `fastapi run --reload` command to run the debug live reloa
 ```console
 $ fastapi run --reload app/main.py
 ```
+Because the venv is in root folder:
+
+source ../.venv/bin/activate
+fastapi dev app/main.py
+
+----------------------------------
 
 ...it will look like:
 
