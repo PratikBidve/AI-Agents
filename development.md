@@ -6,6 +6,15 @@
 
 ```bash
 docker compose watch
+
+# Terminal 1: Start only DB and Frontend
+docker compose up -d db frontend
+
+# Terminal 2: Run backend locally
+cd backend
+uv sync
+source ../.venv/bin/activate
+fastapi dev app/main.py
 ```
 
 * Now you can open your browser and interact with these URLs:
@@ -27,6 +36,10 @@ To check the logs, run (in another terminal):
 ```bash
 docker compose logs
 ```
+
+Before committing, run prek (pre-commit tool):
+uv run prek install -f (only locally)
+
 
 To check the logs of a specific service, add the name of the service, e.g.:
 
